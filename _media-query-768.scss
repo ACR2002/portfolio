@@ -1,0 +1,216 @@
+// Media Query - Larger screens/desktop
+@media screen and (min-width:768px){
+    
+    // Navbar at top - expanded menu on bigger screens
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 2.5rem 0; 
+        padding: 0 6rem;
+
+        // Name
+        .name{
+            padding: 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        // Navigation Menu
+        .menu{
+            display: flex;
+            flex-wrap: wrap;
+
+            input, &__icon{
+                display: none;
+            }
+
+            &__list{
+                flex-direction: row;
+                flex-wrap: wrap;
+                opacity: 100;
+                
+                li{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 2rem;
+                    width: 7rem;
+                    height: 3.15rem;
+                    list-style: none;
+                    background-color: $colour-background-primary;
+                    transition: ease-in-out 0.1s;
+
+                    &:hover{
+                        background-color: $colour-background-primary;
+                        //Kept in case I want to change my buttons back
+                        // transition: ease-in 0.1s;
+                        // border-radius: 0.625rem;
+                        // box-shadow: 0 0 0.75rem $colour-hover;
+                        // z-index: 1;
+                    }
+                }
+
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    padding: 1rem;
+    
+                    font-family: $font-body;
+                    font-size: 1rem;
+                    color: $colour-primary;
+                    text-align: center;
+                    text-decoration: none;
+    
+                    &:visited{
+                        text-decoration: none;
+                    }
+
+                    &:hover{
+                        color: $colour-secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    // Header styles - title and intro paragraph
+    header{
+        margin: 0;
+        padding: 0 6rem;
+
+        h1{
+            padding-top: 2.5rem;
+            font-size: 7rem;
+        }
+
+        .line{
+            margin-top: -1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .introduction{
+            padding-top: 1rem;
+            width: 40%;
+
+            font-family: $font-body;
+            font-size: 1rem;
+            color: $colour-primary;
+            line-height: 160%;
+        }
+    }
+
+    main{
+        margin: -2rem 0;
+        padding: 0 6rem;
+
+        .section-title{
+            h2{
+                font-size: 3rem;
+                margin: 0 0.5rem;
+            }
+        }
+
+        // Desktop portfolio
+        .portfolio{
+            margin: 0;
+
+            .arrow-right-down{
+                transform: scale(1);
+                padding: 0.25rem 1rem;
+            }
+
+            #card-4, #card-5, #card-6{
+                display: inline-block;
+            }
+            
+            .project-cards{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .card{
+                margin: 0 0.5rem;
+                padding-bottom: 1.5rem;
+                width: 23rem;
+                flex-grow: 1;
+
+                &__img{
+                    min-height: 18.5rem;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .about{
+            margin: 10rem 6%;
+
+            @media screen and (min-width: 1024px){
+
+                .profile{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 4rem;
+                    justify-content: start;
+    
+                    .section-title{
+                        grid-area: 1/1/2/2;
+                        margin: 0;
+                        padding: 0;
+                        align-self: end;
+                    }
+    
+                    .picture{
+                        grid-area: 1/2/3/3;
+                        width: 90%;
+                        height: auto;
+                        justify-self: end;
+
+                        position: relative;
+                        top: 0;
+                        left: 0;
+
+                        .self{
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        .dotGrid{
+                            display: inline-block;
+                            position: absolute;
+                            top: -10%;
+                            left: 80%;
+                            z-index: 1;
+                            transform: scale(75%);
+                        }
+                    }
+    
+                    p{
+                        grid-area: 2/1/3/2;
+                    }
+                }
+            }
+
+
+            .personal-information{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .expander{
+                display: inline-block;
+                width: 45%;
+            }
+
+        }
+
+        #contact{
+            h1{
+                font-size: 7rem;
+            }
+        }
+    }
+}
